@@ -1,6 +1,6 @@
 Package: rradar
 Type: Package
-Title: rradar title goes here otherwise CRAN checks fail
+Title: Animate NOAA NWS N0R Radar Images by Station Id
 Version: 0.1.0
 Date: 2019-12-04
 Authors@R: c(
@@ -8,7 +8,9 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5670-2640"))
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: A good description goes here otherwise CRAN checks fail.
+Description: NOAA NWS has an array of National Doppler Radar Sites. Tools are provided to 
+    to help you locate stations and create an animated composite image of recent radar
+    images.
 URL: https://gitlab.com/hrbrmstr/rradar
 BugReports: https://gitlab.com/hrbrmstr/rradar/issues
 Encoding: UTF-8

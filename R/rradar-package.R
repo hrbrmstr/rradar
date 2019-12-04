@@ -1,4 +1,8 @@
-#' ...
+#' Animate NOAA NWS N0R Radar Images by Station Id
+#'
+#' NOAA NWS has an array of National Doppler Radar Sites. Tools are provided to
+#' to help you locate stations and create an animated composite image of recent radar
+#' images.
 #'
 #' @md
 #' @name rradar
