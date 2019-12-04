@@ -39,6 +39,24 @@ packageVersion("rradar")
 
 ```
 
+### Stations
+
+```{r}
+library(tidyverse)
+
+filter(stations, state == "Maine")
+
+filter(stations, state == "California")
+```
+
+```{r}
+animate_radar("GYX")
+```
+
+```{r}
+animate_radar("VBX")
+```
+
 ## rradar Metrics
 
 ```{r cloc, echo=FALSE}
