@@ -14,11 +14,13 @@ Version](https://img.shields.io/badge/R%3E%3D-3.2.0-blue.svg)
 
 # rradar
 
-rradar title goes here otherwise CRAN checks fail
+Animate NOAA NWS N0R Radar Images by Station Id
 
 ## Description
 
-A good description goes here otherwise CRAN checks fail.
+NOAA NWS has an array of National Doppler Radar Sites. Tools are
+provided to to help you locate stations and create an animated composite
+image of recent radar images.
 
 ## What’s Inside The Tin
 
@@ -36,6 +38,10 @@ remotes::install_git("https://git.rud.is/hrbrmstr/rradar.git")
 remotes::install_git("https://git.sr.ht/~hrbrmstr/rradar")
 # or
 remotes::install_gitlab("hrbrmstr/rradar")
+# or
+remotes::install_bitbucket("hrbrmstr/rradar")
+# or
+remotes::install_github("hrbrmstr/rradar")
 ```
 
 NOTE: To use the ‘remotes’ install options you will need to have the
@@ -96,8 +102,8 @@ animate_radar("VBX")
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines | (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | --: | -------: | ---: |
-| R    |        6 | 0.86 | 152 | 0.92 |          14 | 0.4 |       25 | 0.42 |
-| Rmd  |        1 | 0.14 |  13 | 0.08 |          21 | 0.6 |       35 | 0.58 |
+| R    |        6 | 0.86 | 152 | 0.92 |          14 | 0.4 |       29 | 0.45 |
+| Rmd  |        1 | 0.14 |  13 | 0.08 |          21 | 0.6 |       35 | 0.55 |
 
 ## Code of Conduct
 
