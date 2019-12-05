@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-60%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/rradar.svg?branch=master)](https://travis-ci.org/hrbrmstr/rradar)  
 ![Minimal R
@@ -33,6 +33,8 @@ The following functions are implemented:
 ## Installation
 
 ``` r
+install.packages("rradar", repos = "https://cinc.rud.is")
+# or
 remotes::install_git("https://git.rud.is/hrbrmstr/rradar.git")
 # or
 remotes::install_git("https://git.sr.ht/~hrbrmstr/rradar")
@@ -54,7 +56,7 @@ library(rradar)
 
 # current version
 packageVersion("rradar")
-## [1] '0.1.0'
+## [1] '0.1.1'
 ```
 
 ### Stations
@@ -102,7 +104,7 @@ animate_radar("VBX")
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines | (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | --: | -------: | ---: |
-| R    |        6 | 0.86 | 152 | 0.92 |          14 | 0.4 |       29 | 0.45 |
+| R    |        6 | 0.86 | 154 | 0.92 |          14 | 0.4 |       29 | 0.45 |
 | Rmd  |        1 | 0.14 |  13 | 0.08 |          21 | 0.6 |       35 | 0.55 |
 
 ## Code of Conduct

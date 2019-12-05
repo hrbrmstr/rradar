@@ -1,11 +1,13 @@
 Package: rradar
 Type: Package
 Title: Animate NOAA NWS N0R Radar Images by Station Id
-Version: 0.1.0
-Date: 2019-12-04
+Version: 0.1.1
+Date: 2019-12-05
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
-           comment = c(ORCID = "0000-0001-5670-2640"))
+           comment = c(ORCID = "0000-0001-5670-2640")),
+    person(given = "John", family = "Muschelli", 
+           role = c("ctb"), email = "muschellij2@gmail.com")
   )
 Maintainer: Bob Rudis <bob@rud.is>
 Description: NOAA NWS has an array of National Doppler Radar Sites. Tools are provided to 

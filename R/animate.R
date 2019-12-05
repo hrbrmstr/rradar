@@ -19,6 +19,7 @@ animate_radar <- function(station = "GYX") {
 
   st_dir <- stations[stations$station == station,][["dir"]]
   st_dir <- unique(st_dir)
+  st_dir <- st_dir[1]
 
   frames_dir_url <- sprintf("https://radar.weather.gov/ridge/RadarImg/%s/%s/", st_dir, station)
 
