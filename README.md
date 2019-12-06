@@ -26,6 +26,8 @@ image of recent radar images.
 
 The following functions are implemented:
 
+  - `animate_conus_mosaic`: Create an animated weather radar mosaic for
+    the the conterminus U.S.
   - `animate_radar`: Create an animated weather image from a NOAA
     station
   - `stations`: NOAA U.S. Radar Stations
@@ -92,20 +94,26 @@ filter(stations, state == "California")
 animate_radar("GYX")
 ```
 
-![](man/figures/README-unnamed-chunk-2-1.gif)<!-- -->
+![](man/figures/README-right-coast-1.gif)<!-- -->
 
 ``` r
 animate_radar("VBX")
 ```
 
-![](man/figures/README-unnamed-chunk-3-1.gif)<!-- -->
+![](man/figures/README-left-coast-1.gif)<!-- -->
+
+``` r
+animate_conus_mosaic("small")
+```
+
+![](man/figures/README-mosaic-1.gif)<!-- -->
 
 ## rradar Metrics
 
-| Lang | \# Files |  (%) | LoC |  (%) | Blank lines | (%) | \# Lines |  (%) |
-| :--- | -------: | ---: | --: | ---: | ----------: | --: | -------: | ---: |
-| R    |        6 | 0.86 | 154 | 0.92 |          14 | 0.4 |       29 | 0.45 |
-| Rmd  |        1 | 0.14 |  13 | 0.08 |          21 | 0.6 |       35 | 0.55 |
+| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
+| R    |        7 | 0.88 | 168 | 0.92 |          21 | 0.49 |       33 | 0.47 |
+| Rmd  |        1 | 0.12 |  14 | 0.08 |          22 | 0.51 |       37 | 0.53 |
 
 ## Code of Conduct
 

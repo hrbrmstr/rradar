@@ -41,7 +41,7 @@ packageVersion("rradar")
 
 ### Stations
 
-```{r}
+```{r stations}
 library(tidyverse)
 
 filter(stations, state == "Maine")
@@ -49,12 +49,16 @@ filter(stations, state == "Maine")
 filter(stations, state == "California")
 ```
 
-```{r}
+```{r right-coast}
 animate_radar("GYX")
 ```
 
-```{r}
+```{r left-coast}
 animate_radar("VBX")
+```
+
+```{r mosaic}
+animate_conus_mosaic("small")
 ```
 
 ## rradar Metrics
