@@ -14,7 +14,7 @@ Version](https://img.shields.io/badge/R%3E%3D-3.2.0-blue.svg)
 
 # rradar
 
-Animate NOAA NWS N0R Radar Images by Station Id
+Animate NOAA NWSRadar Images by Station Id
 
 ## Description
 
@@ -58,7 +58,7 @@ library(rradar)
 
 # current version
 packageVersion("rradar")
-## [1] '0.1.1'
+## [1] '0.2.0'
 ```
 
 ### Stations
@@ -112,8 +112,8 @@ animate_conus_mosaic("small")
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        7 | 0.88 | 168 | 0.92 |          21 | 0.49 |       33 | 0.47 |
-| Rmd  |        1 | 0.12 |  14 | 0.08 |          22 | 0.51 |       37 | 0.53 |
+| R    |        7 | 0.88 | 184 | 0.93 |          23 | 0.51 |       41 | 0.53 |
+| Rmd  |        1 | 0.12 |  14 | 0.07 |          22 | 0.49 |       37 | 0.47 |
 
 ## Code of Conduct
 

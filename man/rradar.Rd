@@ -4,7 +4,7 @@
 \name{rradar}
 \alias{rradar}
 \alias{rradar-package}
-\title{Animate NOAA NWS N0R Radar Images by Station Id}
+\title{Animate NOAA NWSRadar Images by Station Id}
 \description{
 NOAA NWS has an array of National Doppler Radar Sites. Tools are provided to
 to help you locate stations and create an animated composite image of recent radar

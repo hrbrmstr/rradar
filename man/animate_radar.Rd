@@ -4,10 +4,26 @@
 \alias{animate_radar}
 \title{Create an animated weather image from a NOAA station}
 \usage{
-animate_radar(station = "GYX")
+animate_radar(
+  station = "GYX",
+  ridge = c("base", "storm", "hour", "composite", "storm_total", "base_extended"),
+  include_legend = TRUE
+)
 }
 \arguments{
 \item{station}{the abbreviated station name. See \link{stations}.}
+
+\item{ridge}{image type
+\itemize{
+\item "\code{base}" for Base Reflectivity (out to 124 nm). \strong{The default}.
+\item "\code{storm}" for Storm Relative Motion
+\item "\code{hour}" for One-Hour Precipitation
+\item "\code{composite}" for Composite Reflectivity
+\item "\code{storm_total}" for Storm Total Precipitation
+\item "\code{base_extended}" for Base Reflectivity (out to 248 nmi)
+}}
+
+\item{include_legend}{\code{TRUE} (default) if you want the legend}
 }
 \description{
 Create an animated weather image from a NOAA station
