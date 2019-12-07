@@ -3,6 +3,7 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^README\.*Rmd$
+^README_cache$
 ^README\.*html$
 ^NOTES\.*Rmd$
 ^NOTES\.*html$

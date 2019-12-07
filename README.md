@@ -30,6 +30,8 @@ The following functions are implemented:
     the the conterminus U.S.
   - `animate_radar`: Create an animated weather image from a NOAA
     station
+  - `latest_radar`: Read latest NWS regional or ConUS radar mosaics as a
+    stars object
   - `stations`: NOAA U.S. Radar Stations
 
 ## Installation
@@ -108,12 +110,41 @@ animate_conus_mosaic("small")
 
 ![](man/figures/README-mosaic-1.gif)<!-- -->
 
+``` r
+library(sf)
+library(stars)
+library(rradar)
+library(rnaturalearth)
+library(hrbrthemes)
+library(tidyverse)
+
+us <- ne_states(country = "united states of america", returnclass = "sf")
+
+ne_radar <- latest_radar("northeast")
+
+ne_us <- st_crop(us, st_bbox(ne_radar))
+
+ggplot() +
+  geom_sf(data = ne_us, size = 0.125) +
+  geom_stars(data = ne_radar) +
+  scale_fill_viridis_c(name = "dBZ", na.value = "#00000000") +
+  coord_sf(datum = NA) +
+  labs(
+    x = NULL, y = NULL,
+    title = "NWS Radar Mosaic — Northeast Sector",
+    subtitle = "1538 UTC 2019-12-07"
+  ) +
+  theme_ipsum_es(grid="")
+```
+
+<img src="man/figures/README-stars-1.png" width="672" />
+
 ## rradar Metrics
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        7 | 0.88 | 184 | 0.93 |          23 | 0.51 |       41 | 0.53 |
-| Rmd  |        1 | 0.12 |  14 | 0.07 |          22 | 0.49 |       37 | 0.47 |
+| R    |        8 | 0.89 | 229 | 0.87 |          34 | 0.56 |       63 | 0.62 |
+| Rmd  |        1 | 0.11 |  34 | 0.13 |          27 | 0.44 |       39 | 0.38 |
 
 ## Code of Conduct
 

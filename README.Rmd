@@ -49,16 +49,43 @@ filter(stations, state == "Maine")
 filter(stations, state == "California")
 ```
 
-```{r right-coast}
+```{r right-coast, cache=TRUE}
 animate_radar("GYX")
 ```
 
-```{r left-coast}
+```{r left-coast, cache=TRUE}
 animate_radar("VBX")
 ```
 
-```{r mosaic}
+```{r mosaic, cache=TRUE}
 animate_conus_mosaic("small")
+```
+
+```{r stars}
+library(sf)
+library(stars)
+library(rradar)
+library(rnaturalearth)
+library(hrbrthemes)
+library(tidyverse)
+
+us <- ne_states(country = "united states of america", returnclass = "sf")
+
+ne_radar <- latest_radar("northeast")
+
+ne_us <- st_crop(us, st_bbox(ne_radar))
+
+ggplot() +
+  geom_sf(data = ne_us, size = 0.125) +
+  geom_stars(data = ne_radar) +
+  scale_fill_viridis_c(name = "dBZ", na.value = "#00000000") +
+  coord_sf(datum = NA) +
+  labs(
+    x = NULL, y = NULL,
+    title = "NWS Radar Mosaic — Northeast Sector",
+    subtitle = "1538 UTC 2019-12-07"
+  ) +
+  theme_ipsum_es(grid="")
 ```
 
 ## rradar Metrics

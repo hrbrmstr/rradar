@@ -1,3 +1,6 @@
+0.2.0
+* added `latest_radar()` to return regional mosaics as `stars` objects
+
 0.1.2
 * added conus animation
 

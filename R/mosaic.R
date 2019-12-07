@@ -8,7 +8,7 @@ animate_conus_mosaic <- function(size = c("small", "large")) {
 
   pre <- if (size == "small") "Nat_" else "NAT_"
 
-  ir <- possibly(image_read, NULL)
+  ir <- possibly(magick::image_read, NULL)
 
   res <- httr::GET("https://radar.weather.gov/ridge/Conus/RadarImg/")
   out <- httr::content(res)
@@ -20,6 +20,6 @@ animate_conus_mosaic <- function(size = c("small", "large")) {
 
   radar_imgs <- do.call(c, out)
 
-  image_animate(radar_imgs)
+  magick::image_animate(radar_imgs)
 
 }

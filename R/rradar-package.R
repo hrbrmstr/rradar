@@ -9,4 +9,7 @@
 #' @keywords internal
 #' @author Bob Rudis (bob@@rud.is)
 #' @import httr magick rvest
+#' @importFrom stars read_stars
+#' @importFrom sf st_set_crs
+#' @importFrom utils download.file
 "_PACKAGE"
