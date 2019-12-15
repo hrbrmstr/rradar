@@ -61,31 +61,37 @@ animate_radar("VBX")
 animate_conus_mosaic("small")
 ```
 
-```{r stars}
+```{r stars, fig.width=800/96, fig.height=800/96, cache=TRUE}
 library(sf)
 library(stars)
 library(rradar)
+library(viridis)
 library(rnaturalearth)
 library(hrbrthemes)
 library(tidyverse)
 
-us <- ne_states(country = "united states of america", returnclass = "sf")
+wrld <- ne_countries(scale = "medium", country = c("united states of america", "canada"), 
+                     continent = "north america", returnclass = "sf")
+us <- ne_states("united states of america", returnclass = "sf")
 
 ne_radar <- latest_radar("northeast")
 
-ne_us <- st_crop(us, st_bbox(ne_radar))
+wrld <- st_crop(wrld, st_bbox(ne_radar))
+us <- st_crop(us, st_bbox(ne_radar))
 
 ggplot() +
-  geom_sf(data = ne_us, size = 0.125) +
+  geom_sf(data = wrld, size = 0.125, fill = '#fefefe') +
+  geom_sf(data = us, size = 0.125, fill = '#fefefe') +
   geom_stars(data = ne_radar) +
-  scale_fill_viridis_c(name = "dBZ", na.value = "#00000000") +
   coord_sf(datum = NA) +
+  scale_fill_rradar() +
   labs(
     x = NULL, y = NULL,
     title = "NWS Radar Mosaic — Northeast Sector",
-    subtitle = "1538 UTC 2019-12-07"
+    subtitle = "1758 UTC 2019-12-15"
   ) +
-  theme_ipsum_es(grid="")
+  theme_ipsum_es(grid="") +
+  theme(legend.key.height = unit(5, "lines"))
 ```
 
 ## rradar Metrics

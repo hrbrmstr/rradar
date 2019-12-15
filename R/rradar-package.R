@@ -12,4 +12,7 @@
 #' @importFrom stars read_stars
 #' @importFrom sf st_set_crs
 #' @importFrom utils download.file
+#' @importFrom scales rescale
+#' @importFrom ggplot2 scale_fill_gradientn
+#' @importFrom viridis viridis_pal
 "_PACKAGE"

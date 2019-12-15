@@ -1,8 +1,8 @@
 Package: rradar
 Type: Package
 Title: Animate NOAA NWSRadar Images by Station Id
-Version: 0.2.0
-Date: 2019-12-06
+Version: 0.3.0
+Date: 2019-12-15
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640")),
@@ -28,6 +28,9 @@ Imports:
     magrittr,
     stars,
     sf,
-    utils
+    utils,
+    scales,
+    ggplot2,
+    viridis
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2

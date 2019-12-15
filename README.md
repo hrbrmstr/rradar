@@ -32,6 +32,8 @@ The following functions are implemented:
     station
   - `latest_radar`: Read latest NWS regional or ConUS radar mosaics as a
     stars object
+  - `scale_fill_rradar`: Continuous fill scale for use with NWS raster
+    radar data
   - `stations`: NOAA U.S. Radar Stations
 
 ## Installation
@@ -60,7 +62,7 @@ library(rradar)
 
 # current version
 packageVersion("rradar")
-## [1] '0.2.0'
+## [1] '0.3.0'
 ```
 
 ### Stations
@@ -114,37 +116,43 @@ animate_conus_mosaic("small")
 library(sf)
 library(stars)
 library(rradar)
+library(viridis)
 library(rnaturalearth)
 library(hrbrthemes)
 library(tidyverse)
 
-us <- ne_states(country = "united states of america", returnclass = "sf")
+wrld <- ne_countries(scale = "medium", country = c("united states of america", "canada"), 
+                     continent = "north america", returnclass = "sf")
+us <- ne_states("united states of america", returnclass = "sf")
 
 ne_radar <- latest_radar("northeast")
 
-ne_us <- st_crop(us, st_bbox(ne_radar))
+wrld <- st_crop(wrld, st_bbox(ne_radar))
+us <- st_crop(us, st_bbox(ne_radar))
 
 ggplot() +
-  geom_sf(data = ne_us, size = 0.125) +
+  geom_sf(data = wrld, size = 0.125, fill = '#fefefe') +
+  geom_sf(data = us, size = 0.125, fill = '#fefefe') +
   geom_stars(data = ne_radar) +
-  scale_fill_viridis_c(name = "dBZ", na.value = "#00000000") +
   coord_sf(datum = NA) +
+  scale_fill_rradar() +
   labs(
     x = NULL, y = NULL,
     title = "NWS Radar Mosaic — Northeast Sector",
-    subtitle = "1538 UTC 2019-12-07"
+    subtitle = "1758 UTC 2019-12-15"
   ) +
-  theme_ipsum_es(grid="")
+  theme_ipsum_es(grid="") +
+  theme(legend.key.height = unit(5, "lines"))
 ```
 
-<img src="man/figures/README-stars-1.png" width="672" />
+<img src="man/figures/README-stars-1.png" width="800" />
 
 ## rradar Metrics
 
-| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
-| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        8 | 0.89 | 229 | 0.87 |          34 | 0.56 |       63 | 0.62 |
-| Rmd  |        1 | 0.11 |  34 | 0.13 |          27 | 0.44 |       39 | 0.38 |
+| Lang | \# Files | (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | --: | --: | ---: | ----------: | ---: | -------: | ---: |
+| R    |        9 | 0.9 | 239 | 0.86 |          37 | 0.58 |      114 | 0.75 |
+| Rmd  |        1 | 0.1 |  40 | 0.14 |          27 | 0.42 |       39 | 0.25 |
 
 ## Code of Conduct
 
