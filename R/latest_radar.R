@@ -55,6 +55,8 @@ latest_radar <- function(regional_mosaic = c("alaska", "centgrtlakes", "hawaii",
   regional_mosaic <- .reg_trans[[regional_mosaic]]
 
   td <- tempdir()
+  if (!dir.exists(td)) dir.create(td)
+
   on.exit(unlink(td))
 
   download.file(
@@ -66,6 +68,10 @@ latest_radar <- function(regional_mosaic = c("alaska", "centgrtlakes", "hawaii",
     method = "libcurl",
     quiet = quiet
   )
+
+  if (!all(file.exists(file.path(td, sprintf("%s.gif", regional_mosaic))))) {
+    stop("Something went wrong. File(s) do not appear to have downloaded or there is a permissions problem.", call.=FALSE)
+  }
 
   out <- stars::read_stars(file.path(td, sprintf("%s.gif", regional_mosaic)))
 

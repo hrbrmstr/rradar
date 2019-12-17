@@ -32,6 +32,7 @@ The following functions are implemented:
     station
   - `latest_radar`: Read latest NWS regional or ConUS radar mosaics as a
     stars object
+  - `latest_ridge`: Read latest NWS ridge as a stars object
   - `scale_fill_rradar`: Continuous fill scale for use with NWS raster
     radar data
   - `stations`: NOAA U.S. Radar Stations
@@ -62,7 +63,7 @@ library(rradar)
 
 # current version
 packageVersion("rradar")
-## [1] '0.3.0'
+## [1] '0.4.0'
 ```
 
 ### Stations
@@ -149,10 +150,10 @@ ggplot() +
 
 ## rradar Metrics
 
-| Lang | \# Files | (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
-| :--- | -------: | --: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |        9 | 0.9 | 239 | 0.86 |          37 | 0.58 |      114 | 0.75 |
-| Rmd  |        1 | 0.1 |  40 | 0.14 |          27 | 0.42 |       39 | 0.25 |
+| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
+| R    |       10 | 0.91 | 276 | 0.87 |          51 | 0.65 |      127 | 0.77 |
+| Rmd  |        1 | 0.09 |  40 | 0.13 |          27 | 0.35 |       39 | 0.23 |
 
 ## Code of Conduct
 

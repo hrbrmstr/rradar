@@ -1,3 +1,7 @@
+0.3.0
+* added `latest_ridge()` to return regional mosaics as `stars` objects
+* `scale_fill_rradar()`
+
 0.2.0
 * added `latest_radar()` to return regional mosaics as `stars` objects
 

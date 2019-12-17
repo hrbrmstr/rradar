@@ -44,3 +44,32 @@ This \code{{ggplot2}} continuous fill scale is an adaptation of the \code{{virid
 where the viridis scale mappings only start when dBZ values are around 5 dBZ. Values lower than that
 receive light gray with a 5\% alpha (see the \code{low_dbz} parameter).
 }
+\examples{
+\dontrun{
+library(sf)
+library(stars)
+library(rradar)
+library(rnaturalearth)
+library(hrbrthemes)
+library(tidyverse)
+
+us <- ne_states(country = "united states of america", returnclass = "sf")
+
+ne_radar <- latest_radar("northeast")
+
+ne_us <- st_crop(us, st_bbox(ne_radar))
+
+ggplot() +
+  geom_sf(data = ne_us, size = 0.125, fill = '#fefefe') +
+  geom_stars(data = ne_radar) +
+  coord_sf(datum = NA) +
+  scale_fill_rradar() +
+  labs(
+    x = NULL, y = NULL,
+    title = "NWS Radar Mosaic — Northeast Sector",
+    subtitle = "1538 UTC 2019-12-07"
+  ) +
+  theme_ipsum_es(grid="") +
+  theme(legend.key.height = unit(5, "lines"))
+}
+}
